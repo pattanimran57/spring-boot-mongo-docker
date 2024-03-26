@@ -8,6 +8,8 @@ services:
     - /tmp/spring_var.env
     networks:
     - springappmongo
+    depends_on:
+    - mongodb
 
   mongodb:
     image: pattanimrankhan/mongo:latest
