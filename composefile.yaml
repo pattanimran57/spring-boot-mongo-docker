@@ -10,7 +10,7 @@ services:
     - springappmongo
 
   mongodb:
-    image: pattanimrankhan/mongo:latest
+    image: mongo:latest
     container_name: mongo
     env_file:
     - ~/spring-boot-mongo-docker/mongo_var.env
