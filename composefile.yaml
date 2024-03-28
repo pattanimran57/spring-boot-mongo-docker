@@ -1,7 +1,7 @@
 services:
-  springservicetest:
+  springbootTestService:
     image: pattanimrankhan/springapp:latest
-    container_name: springboottest
+    container_name: springbootTest
     ports:
     - 8080:8080
     env_file:
@@ -9,11 +9,11 @@ services:
     networks:
     - springappmongo
     depends_on:
-    - mongodbtest
+    - mongodb
 
-  mongodbtest:
+  mongodbTest:
     image: mongo:latest
-    container_name: mongodb
+    container_name: mongoTestDB
     env_file:
     - /tmp/mongo_var.env
     networks:
@@ -25,5 +25,5 @@ volumes:
     driver: local
 
 networks:
-  springappmongo:
+  springbootmongo:
     driver: bridge
