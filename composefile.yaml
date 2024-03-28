@@ -5,7 +5,7 @@ services:
     ports:
     - 8080:8080
     env_file:
-    - ~/springtest_var.env
+    - /tmp/springtest_var.env
     networks:
     - springbootmongo
     depends_on:
