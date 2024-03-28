@@ -7,7 +7,7 @@ services:
     env_file:
     - /tmp/spring_var.env
     networks:
-    - springappmongo
+    - springbootmongo
     depends_on:
     - mongodbTest
 
@@ -17,7 +17,7 @@ services:
     env_file:
     - /tmp/mongo_var.env
     networks:
-    - springappmongo
+    - springbootmongo
     volumes:
     - ebsvol
 volumes:
