@@ -1,19 +1,21 @@
 services:
-  springservice:
+  springservicetest:
     image: pattanimrankhan/springapp:latest
-    container_name: springboot
+    container_name: springboottest
     ports:
     - 8080:8080
     env_file:
-    - ~/spring-boot-mongo-docker/spring_var.env
+    - /tmp/spring_var.env
     networks:
     - springappmongo
+    depends_on:
+    - mongodbtest
 
-  mongodb:
+  mongodbtest:
     image: mongo:latest
-    container_name: mongo
+    container_name: mongodb
     env_file:
-    - ~/spring-boot-mongo-docker/mongo_var.env
+    - /tmp/mongo_var.env
     networks:
     - springappmongo
     volumes:
